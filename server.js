@@ -13,9 +13,8 @@ app.use(expressLayouts)
 app.use(express.static('public'))
 
 const mongoose = require('mongoose')
-mongoose.createConnection(process.env.DATABASE_URL,{
-    useNewUrlParser: true
-})
+mongoose.connect(config.DB,{ useNewUrlParser: true })
+
 const db = mongoose.connection
 db.on('error',error => console.error(error))
 db.once('open', error => console.log('Connected to MongoDB'))
