@@ -15,7 +15,7 @@ app.use(express.static('public'))
 const mongoose = require('mongoose')
 //please dont use process.env.DATABASE_URL,just copy and paste the url in the mongoose.connect and in 
 // the url dont use localhost use 12.0.0.1
-mongoose.connect(process.env.DATABASE_URL
+mongoose.connect("mongodb://127.0.0.1/mybrary"
     ,{ useNewUrlParser: true })
 
 const db = mongoose.connection
